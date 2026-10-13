@@ -1,5 +1,6 @@
 # TreDonne Estate — Outage Planner
 
+<<<<<<< HEAD
 A Streamlit tool for technicians working on the TreDonne ring-fed network.
 Pick a section from the sidebar:
 
@@ -23,6 +24,21 @@ current one from the master sheet. Techs can also open any PDF ad hoc.
 Click a transformer to see every stand connected to it — stand, phase, meter
 serial(s), tariff and meter role — with a per-transformer summary and CSV
 export, plus an all-transformers overview.
+=======
+A small Streamlit tool for technicians planning maintenance on the TreDonne
+ring-fed network. Two modes:
+
+* **Minisub(s)** — transformer / kiosk work: pick the minisub(s) you need to
+  take out of service.
+* **MV ring section** — cable work: pick a 3300 V cable run between two
+  minisubs.
+
+In both cases it tells you how to isolate, whether the ring break must be
+closed to keep the rest of the estate alive, and exactly which stands lose
+power — ready to export as an outage notice. (For single ring-cable sections
+the break can almost always be closed so **no customers go off** — only the
+cable is dead.)
+>>>>>>> 2fb8c9a8b8100d64fc405fd0210ba259010b4f77
 
 ## Run it
 
@@ -72,8 +88,11 @@ restores any islanded minisub — so a single-section isolation typically affect
 | `app.py` | Streamlit UI |
 | `engine.py` | data loader + ring connectivity + switching plan (no UI) |
 | `topology.py` | ring order, NO point, sources, LV isolators — **edit here** if the network changes |
+<<<<<<< HEAD
 | `reticulation_pdf.py` | builds a current reticulation PDF from the master sheet into `reticulation/` |
 | `reticulation/` | the reticulation PDF(s); the app serves the newest. Drop the official SLD here to replace the generated one. |
+=======
+>>>>>>> 2fb8c9a8b8100d64fc405fd0210ba259010b4f77
 | `data/TRD_master.xlsx` | meter master sheet (stand → minisub, serial, tariff). Replace via the sidebar uploader or swap this file to refresh. |
 
 ## Updating the data
